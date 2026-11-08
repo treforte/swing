@@ -36,10 +36,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   a{color:inherit}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .wrap{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 20px}
   .center{text-align:center}
   .eyebrow{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--red)}
   h2{font-family:var(--display);font-weight:300;font-size:clamp(28px,4vw,42px);line-height:1.15;margin:10px 0 14px}
@@ -183,7 +183,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   @media (max-width:760px){
     section{padding:56px 0}
-    .brand{letter-spacing:.24em;font-size:10px}
+    .brand{letter-spacing:.24em;font-size:10px;max-width:60%}
+    .rl{display:none}
+    .meta{font-size:13px}
     .titleblock{padding:30px 0 22px}
     .meta span{padding:0 9px}
     .player{border-radius:12px;margin:0 -4px}
@@ -211,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="wrap">
     <div class="bar">
       <div class="brand">A Miasha Productions Film</div>
-      <button class="region" id="regionBtn" type="button" aria-haspopup="dialog">Watching from: <b id="regionLabel">United States</b> ▾</button>
+      <button class="region" id="regionBtn" type="button" aria-haspopup="dialog"><span class="rl">Watching from: </span><b id="regionLabel">United States</b> ▾</button>
     </div>
 
     <div class="titleblock">
