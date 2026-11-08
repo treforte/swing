@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SWING | Now Streaming on Prime Video</title>
+<meta name="description" content="Four couples. One night at a private club. Watch SWING, the new suspense drama starring Columbus Short, Angela Simmons and Tobias Truvillion. Rent or buy now on Prime Video.">
+<meta property="og:title" content="SWING | Now Streaming on Prime Video">
+<meta property="og:description" content="Four couples. One night. No going back. Rent or buy SWING now.">
+<meta property="og:type" content="video.movie">
+<meta name="theme-color" content="#0d0102">
+
+<!-- ============ GOOGLE TAG MANAGER (head) ============
+     Replace GTM-XXXXXXX with the container ID, then uncomment.
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+==================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0d0102; --bg2:#160305; --bg3:#1f0507; --ink:#f7f2f2; --muted:#b39c9d; --line:rgba(211,57,62,.18);
+    --red:#d3393e; --red-hot:#e8464b; --red-deep:#5c0a0e;
+    --violet:#d3393e; --magenta:#5c0a0e; --gold:#e8464b;
+    --cta:#d3393e; --cta-ink:#ffffff;
+    --r:14px; --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;padding:26px 0 56px;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,.0) 0 38px, rgba(0,0,0,.28) 38px 70px, rgba(0,0,0,0) 70px 96px),
+      radial-gradient(70% 80% at 75% 25%, rgba(120,12,18,.75), transparent 72%),
+      radial-gradient(50% 60% at 15% 0%, rgba(70,6,10,.6), transparent 70%),
+      var(--bg);
+  }
+  .hero .poster{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:70% 20%;opacity:.45;mask-image:linear-gradient(90deg,transparent 0%,#000 55%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%)}
+  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:140px;z-index:-1;background:linear-gradient(transparent,var(--bg))}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:38px}
+  .brand{font-family:Montserrat,system-ui,sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#fff;font-weight:400}
+  .region{font-size:12px;color:var(--muted);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+  .region:hover{color:var(--ink)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(226,54,74,.7);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(226,54,74,0)}100%{box-shadow:0 0 0 0 rgba(226,54,74,0)}}
+  h1{font-family:Montserrat,system-ui,sans-serif;font-weight:200;color:var(--red);font-size:clamp(84px,13vw,168px);line-height:.9;letter-spacing:.03em;margin:16px 0 10px;text-shadow:0 0 50px rgba(211,57,62,.35)}
+  .logo{height:34px;width:auto;display:block}
+  .tagline{font-family:Montserrat,system-ui,sans-serif;font-weight:400;font-size:clamp(13px,1.5vw,16px);letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+  .tagline b{color:var(--red-hot);font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14px;color:var(--muted);margin-bottom:28px}
+  .meta span+span::before{content:"•";margin-right:14px;opacity:.5}
+  .pill{border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:12px}
+
+  .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:42px;align-items:start}
+
+  /* Trailer facade */
+  .trailer{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#120203 center/cover;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--line);cursor:pointer}
+  .trailer .shade{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,.05),rgba(0,0,0,.6)),linear-gradient(135deg,rgba(120,12,18,.45),rgba(0,0,0,.2))}
+  .trailer .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:transform .2s ease;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+  .trailer:hover .play{transform:translate(-50%,-50%) scale(1.07)}
+  .trailer .play svg{margin-left:6px}
+  .trailer .label{position:absolute;left:18px;bottom:16px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .trailer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* CTA panel */
+  .panel{background:rgba(22,3,5,.82);border-top:3px solid var(--red)!important;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+  .panel h2{font-size:15px;font-weight:600;color:var(--muted);margin-bottom:14px}
+  .btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-decoration:none;font-weight:700;font-size:17px;border-radius:12px;padding:17px 20px;transition:transform .15s ease,box-shadow .15s ease,background .15s}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--cta);color:var(--cta-ink);box-shadow:0 10px 30px rgba(211,57,62,.35)}
+  .btn-primary:hover{background:var(--red-hot);box-shadow:0 14px 44px rgba(232,70,75,.5)}
+  .btn-secondary{background:transparent;color:var(--ink);border:1.5px solid rgba(255,255,255,.35);margin-top:12px}
+  .btn-secondary:hover{background:rgba(255,255,255,.06)}
+  .btn .price{font-weight:600;font-size:14px;opacity:.75}
+  .btn .l{display:flex;align-items:center;gap:12px}
+  .fine{font-size:12.5px;color:var(--muted);margin-top:14px}
+  .trust{display:grid;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:#d6d0e6}
+  .trust div{display:flex;gap:9px;align-items:flex-start}
+  .trust svg{flex:none;margin-top:3px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0}
+  .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+  h3{font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:clamp(30px,4.2vw,50px);line-height:1.08;letter-spacing:.01em;margin-bottom:18px}
+  h3 em{font-style:normal;color:var(--red-hot)}
+  .lede{font-size:18px;color:#ddd6ee;max-width:640px}
+  .story{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+  .cast{display:grid;gap:12px}
+  .cast .c{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+  .cast .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:15px;background:linear-gradient(135deg,var(--violet),var(--magenta))}
+  .cast .n{font-weight:600}
+  .cast .r{font-size:13px;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .step{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--bg2)}
+  .step .num{font-family:Montserrat,system-ui,sans-serif;font-weight:200;font-size:48px;color:var(--red);line-height:1}
+  .step h4{font-size:17px;margin:10px 0 6px}
+  .step p{font-size:14.5px;color:var(--muted)}
+
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+  .card{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--bg2);display:flex;flex-direction:column}
+  .card.best{border-color:rgba(211,57,62,.7);background:linear-gradient(180deg,rgba(211,57,62,.14),var(--bg2) 45%)}
+  .badge{position:absolute;top:-11px;left:22px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .card h4{font-size:22px;margin-bottom:4px}
+  .card .p{font-size:15px;color:var(--muted);margin-bottom:16px}
+  .card ul{list-style:none;display:grid;gap:9px;margin-bottom:22px;font-size:15px;flex:1}
+  .card li::before{content:"✓";color:var(--gold);font-weight:700;margin-right:10px}
+
+  .makers{text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(60% 120% at 50% 0%,rgba(120,12,18,.45),transparent 70%)}
+  .makers .lede{margin:0 auto}
+
+  .final{text-align:center}
+  .final .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .final .btn{width:auto;min-width:240px;justify-content:center}
+  .final .btn-secondary{margin-top:0}
+
+  footer{padding:36px 0 110px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+  footer p+p{margin-top:6px}
+
+  /* Sticky mobile CTA */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(13,1,2,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none;gap:10px;transform:translateY(110%);transition:transform .25s ease}
+  .sticky.show{transform:none}
+  .sticky .btn{padding:14px 12px;font-size:15px;justify-content:center;margin:0}
+
+  /* Region modal */
+  .modal{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.7);display:none;place-items:center;padding:20px}
+  .modal.open{display:grid}
+  .modal .box{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:24px;width:100%;max-width:380px}
+  .modal h4{font-size:18px;margin-bottom:14px}
+  .modal button{display:block;width:100%;text-align:left;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:13px 14px;margin-top:8px;font:inherit;cursor:pointer}
+  .modal button:hover,.modal button[aria-pressed="true"]{border-color:var(--red);background:rgba(211,57,62,.12)}
+  .modal small{display:block;color:var(--muted);font-size:12.5px}
+
+
+  /* Opening weekend strip */
+  .strip{background:var(--red-deep);border-bottom:1px solid var(--red);color:#fff;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 14px}
+  .strip a{color:#fff;text-underline-offset:3px}
+
+  /* Couples */
+  .couples{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .couple{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(160deg,#3a070b,#120203 70%) center/cover;border:1px solid var(--line)}
+  .couple::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.92))}
+  .couple .tx{position:absolute;left:16px;right:16px;bottom:14px;z-index:1}
+  .couple .lab{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red-hot)}
+  .couple .nm{font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:24px;line-height:1.1;margin-top:4px}
+  .couple .ac{font-size:12.5px;color:#d4d4d4;margin-top:4px}
+  .quiz{margin-top:14px;font-size:14px;color:var(--muted)}
+
+  /* Cast + expand */
+  .leads{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  .lead{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+  .lead .av{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:600;border:1px solid var(--red);color:var(--red-hot);background:var(--bg3)}
+  .lead .n{font-weight:600}.lead .r{font-size:13px;color:var(--muted)}
+  .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+  .more.open{grid-template-rows:1fr}
+  .more > div{overflow:hidden}
+  .fullcast{display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px;padding-top:18px}
+  .fullcast .row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .fullcast .row span:last-child{color:var(--muted);text-align:right}
+  .toggle{margin-top:18px;background:transparent;color:var(--ink);border:1.5px solid rgba(255,255,255,.3);border-radius:999px;padding:11px 20px;font:600 14px Inter,sans-serif;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+  .toggle:hover{border-color:var(--red);color:#fff}
+  .toggle .chev{transition:transform .3s}.toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+
+  /* FAQ */
+  .faq{margin-top:22px;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;font-size:16px;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--red-hot);font-size:22px;line-height:1;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq p{padding:0 0 18px;color:var(--muted);font-size:15px;max-width:720px}
+
+  /* Trailer end screen */
+  .endscreen{position:absolute;inset:0;z-index:3;background:rgba(5,5,5,.88);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center}
+  .endscreen.show{display:flex}
+  .endscreen h5{font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px)}
+  .endscreen .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .endscreen .btn{width:auto;min-width:170px;justify-content:center;margin:0}
+  .endscreen .replay{background:none;border:0;color:var(--muted);font:500 13px Inter,sans-serif;cursor:pointer;text-decoration:underline}
+
+  @media (max-width:880px){
+    .couples{grid-template-columns:repeat(2,1fr)}
+    .leads,.fullcast{grid-template-columns:1fr}
+  }
+
+  @media (max-width:880px){
+    .hero-grid,.story,.compare{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .sticky{display:flex}
+    .topbar{margin-bottom:26px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+<!-- GTM (noscript): replace GTM-XXXXXXX, then uncomment
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+-->
+
+<div class="strip" id="strip">Opening weekend · Streaming now · <a href="#watch">Watch tonight</a></div>
+<header class="hero">
+  <div class="poster" id="poster"></div>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand" id="brand">A Miasha Productions Film</div>
+      <button class="region" id="regionBtn" type="button" aria-haspopup="dialog">Watching from: <b id="regionLabel">United States</b> ▾</button>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span><span id="eyebrowText">Now streaming on Prime Video</span></div>
+        <h1>SWING</h1>
+        <p class="tagline">One night. No rules. <b>Endless consequences.</b></p>
+        <div class="meta">
+          <span>Suspense</span><span>Drama</span><span>2026</span><span>1h 28m</span><span><b class="pill">NR</b> Mature audiences</span>
+        </div>
+
+        <div class="trailer" id="trailer" role="button" tabindex="0" aria-label="Play the SWING trailer">
+          <div class="shade"></div>
+          <div class="play"><svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true"><path d="M29 17 1 33V1z" fill="#fff"/></svg></div>
+          <div class="label">▶ Watch the official trailer</div>
+        </div>
+      </div>
+
+      <aside class="panel" id="watch" aria-label="Watch SWING">
+        <h2 id="panelTitle">Start watching tonight</h2>
+        <a class="btn btn-primary js-cta" data-option="rent" data-location="hero" href="#">
+          <span class="l"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="currentColor"/></svg><span class="js-rent-label">Rent on Prime Video</span></span>
+          <span class="price js-rent-price"></span>
+        </a>
+        <a class="btn btn-secondary js-cta" data-option="buy" data-location="hero" href="#">
+          <span class="l"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="js-buy-label">Buy &amp; keep forever</span></span>
+          <span class="price js-buy-price"></span>
+        </a>
+        <p class="fine js-fine">Opens SWING on Prime Video, where you pick Rent or Buy. No subscription needed.</p>
+        <div class="trust">
+          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#e8464b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span>Watch on your TV, phone, tablet or laptop</span></div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#e8464b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span class="js-trust2">Checkout with your existing Amazon account</span></div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#e8464b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span>From the creators of the Secret Society films</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap story">
+      <div>
+        <div class="kicker">The story</div>
+        <h3>Everybody came for a good time. <em>Not everybody leaves with one.</em></h3>
+        <p class="lede">Four couples enter one exclusive world where fantasy, attraction and curiosity come with consequences. One night of exploration turns into a dangerous mix of desire, jealousy, betrayal and secrets nobody planned on.</p>
+      </div>
+      <div class="panel" style="border-top:3px solid var(--red)">
+        <div class="kicker" style="margin-bottom:6px">Now streaming</div>
+        <p style="font-size:15px;color:#d4d4d4;margin-bottom:14px">Some nights change everything. This is one of them.</p>
+        <a class="btn btn-primary js-cta" data-option="rent" data-location="story" href="#"><span class="js-rent-label">Rent on Prime Video</span><span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0" id="cast">
+    <div class="wrap">
+      <div class="kicker">Meet the couples</div>
+      <h3>Four couples. <em>Which one are you?</em></h3>
+      <div class="couples" id="couples"></div>
+
+      <div class="kicker" style="margin-top:44px">Starring</div>
+      <div class="leads" id="leads"></div>
+      <div class="more" id="more"><div><div class="fullcast" id="fullcast"></div></div></div>
+      <button class="toggle" id="castToggle" type="button" aria-expanded="false" aria-controls="more"><span id="castToggleText">See full cast</span><span class="chev">▾</span></button>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">How to watch</div>
+      <h3>Watching in under a minute</h3>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h4>Tap Rent or Buy</h4><p class="js-step1">You'll land on SWING's official Prime Video page.</p></div>
+        <div class="step"><div class="num">2</div><h4>Confirm your choice</h4><p class="js-step2">Sign in with your Amazon account and choose Rent or Buy. No Prime membership required.</p></div>
+        <div class="step"><div class="num">3</div><h4>Press play</h4><p>Stream instantly on your smart TV, Fire TV, Roku, phone, tablet or browser.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">Choose your way</div>
+      <h3>Rent for tonight or own it</h3>
+      <div class="compare">
+        <div class="card">
+          <h4>Rent</h4>
+          <div class="p js-rent-price-card">Best for movie night</div>
+          <ul>
+            <li>Watch tonight on any device</li>
+            <li>Plenty of time to start after renting</li>
+            <li>Rental terms shown at checkout</li>
+          </ul>
+          <a class="btn btn-secondary js-cta" style="margin-top:0" data-option="rent" data-location="compare" href="#"><span class="js-rent-label">Rent on Prime Video</span><span>→</span></a>
+        </div>
+        <div class="card best">
+          <span class="badge">Fan favorite</span>
+          <h4>Buy</h4>
+          <div class="p js-buy-price-card">Yours to keep</div>
+          <ul>
+            <li>Rewatch anytime, no expiration</li>
+            <li>Lives in your digital library</li>
+            <li>Catch every twist the second time</li>
+          </ul>
+          <a class="btn btn-primary js-cta" data-option="buy" data-location="compare" href="#"><span class="js-buy-label">Buy &amp; keep forever</span><span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="kicker">Questions</div>
+      <h3>Before you press play</h3>
+      <div class="faq" id="faq">
+        <details><summary>Do I need a Prime membership?</summary><p class="js-faq1">No. Renting or buying SWING only needs a regular Amazon account. Prime members check out the same way.</p></details>
+        <details><summary>What can I watch it on?</summary><p>Smart TVs, Fire TV, Roku, Apple TV, game consoles, phones, tablets and any web browser.</p></details>
+        <details><summary>Should I rent or buy?</summary><p>Rent if it's a one-night movie night. Buy if you want to rewatch and catch every twist. It stays in your library with no expiration.</p></details>
+        <details><summary>I'm outside the US or UK. Can I watch?</summary><p>Yes. SWING is available worldwide through Miasha Productions. Tap "Watching from" at the top of the page and choose Everywhere else.</p></details>
+        <details><summary>Is it suitable for everyone?</summary><p>SWING is a sensual suspense drama intended for mature audiences.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="makers">
+    <div class="wrap">
+      <div class="kicker">From Miasha Productions</div>
+      <h3>Loved Secret Society? <em>This is your next obsession.</em></h3>
+      <p class="lede">The same storytelling that made the Secret Society films a fan favorite, now with an all-new cast and a night nobody walks away from the same.</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h3>Some nights <em>change everything.</em></h3>
+      <p class="lede" style="margin:0 auto">SWING is streaming now. Grab the popcorn. Bring your partner. Keep your secrets.</p>
+      <div class="ctas">
+        <a class="btn btn-primary js-cta" data-option="rent" data-location="final" href="#"><span class="js-rent-label">Rent on Prime Video</span></a>
+        <a class="btn btn-secondary js-cta" data-option="buy" data-location="final" href="#"><span class="js-buy-label">Buy &amp; keep forever</span></a>
+      </div>
+      <p class="fine js-alt" style="margin-top:18px"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Miasha Productions. All rights reserved. SWING is intended for mature audiences.</p>
+    <p>Prime Video and Amazon are trademarks of Amazon.com, Inc. or its affiliates. Availability and pricing are set by the retailer and may vary by country.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" aria-label="Quick watch options">
+  <a class="btn btn-primary js-cta" data-option="rent" data-location="sticky" href="#">Rent</a>
+  <a class="btn btn-secondary js-cta" data-option="buy" data-location="sticky" href="#">Buy</a>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="box">
+    <h4 id="mTitle">Where are you watching from?</h4>
+    <button type="button" data-region="us">United States <small>Watch on Prime Video (amazon.com)</small></button>
+    <button type="button" data-region="uk">United Kingdom <small>Watch on Prime Video (amazon.co.uk)</small></button>
+    <button type="button" data-region="intl">Everywhere else <small>Watch worldwide on Miasha Productions</small></button>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIG: edit these values only
+   ===================================================================== */
+var CONFIG = {
+  youtubeId: "",   // trailer's YouTube video ID, e.g. "dQw4w9WgXcQ" (host it on Miasha's channel)
+  posterUrl: "https://static.wixstatic.com/media/649d37_9fdd848a7f8743b2b8272301767f12cd~mv2.jpg/v1/fit/w_2500,h_1330,al_c/649d37_9fdd848a7f8743b2b8272301767f12cd~mv2.jpg",
+  logoUrl:   "https://static.wixstatic.com/media/ac11ba_45ebbb6ae1e448a790e5d6f831f3aeec~mv2.png/v1/fill/w_311,h_76,al_c,q_85/MiashaProductionsLogo.png",
+  /* CAST: couples are the characters from miashaproductions.com/swing-the-movie.
+     "actors" = who plays them, e.g. "Angela Simmons & Tobias Truvillion". Leave "" to hide the line. */
+  couples: [
+    { names:"Lyssa + Jacob",     label:"The Veterans",     actors:"", img:"https://static.wixstatic.com/media/c66991_c4df37fa94a84ce585e307b67e95c521~mv2.jpg" },
+    { names:"Danielle + Stewart", label:"The Insiders",    actors:"", img:"https://static.wixstatic.com/media/c66991_0eac34735cc94726b4f27f2ae85fe807~mv2.jpg" },
+    { names:"Juju + Ferrari",    label:"The Wild Card",    actors:"", img:"https://static.wixstatic.com/media/c66991_455c33eabce9439a8f94e819d4b04997~mv2.jpg" },
+    { names:"Tori + Kevin",      label:"The First Timers", actors:"", img:"https://static.wixstatic.com/media/c66991_a7add3d542214c31ab1867dfef368668~mv2.jpg" }
+  ],
+  leads: [   // top-billed, always visible
+    { actor:"Columbus Short",    role:"" },
+    { actor:"Angela Simmons",    role:"" },
+    { actor:"Tobias Truvillion", role:"" }
+  ],
+  fullCast: [ // revealed by "See full cast". role = character name
+    { actor:"Tre Forte", role:"Kevin" }
+    // add the rest: { actor:"Name", role:"Character" },
+  ],
+  links: {
+    us:   "https://www.amazon.com/gp/video/detail/B0HG64BFPJ",
+    uk:   "",      // TODO: amazon.co.uk SWING URL. Until set, UK visitors fall back to the worldwide store
+    intlRent: "https://watch.miashaproductions.com/checkout/swing",
+    intlBuy:  "https://watch.miashaproductions.com/checkout/swing?purchase=1"
+  },
+  prices: {        // leave "" to hide. Amazon sets its own prices, so only fill these in if confirmed
+    us:   { rent: "", buy: "" },
+    uk:   { rent: "", buy: "" },
+    intl: { rent: "$5.99", buy: "$9.99" }
+  }
+};
+
+/* =====================================================================
+   TRACKING: all events go to window.dataLayer (picked up by GTM)
+     swing_cta_click  -> cta_platform (amazon|miasha), cta_option (rent|buy),
+                         cta_location (hero|compare|final|sticky), region, cta_url
+     swing_trailer    -> trailer_action (play|progress_25|progress_50|progress_75|complete)
+     swing_region     -> region, region_source (auto|url|manual)
+   ===================================================================== */
+window.dataLayer = window.dataLayer || [];
+function track(obj){ try{ window.dataLayer.push(obj); }catch(e){} }
+
+(function(){
+  var qs = new URLSearchParams(location.search);
+
+  /* ---------- Region: ?region=us|uk|intl  >  saved choice  >  timezone guess ---------- */
+  var US_TZ = /^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Detroit|Boise|Juneau|Sitka|Nome|Adak|Menominee|Metlakatla|Yakutat|Indiana\/.*|Kentucky\/.*|North_Dakota\/.*)|Pacific\/Honolulu|US\/.*)$/;
+  var UK_TZ = /^(Europe\/(London|Belfast)|GB)$/;
+  function guessRegion(){
+    var tz = ""; try{ tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; }catch(e){}
+    if (US_TZ.test(tz)) return "us";
+    if (UK_TZ.test(tz)) return "uk";
+    return "intl";
+  }
+  var region, source;
+  var urlRegion = (qs.get("region")||"").toLowerCase();
+  var saved = null; try{ saved = localStorage.getItem("swing_region"); }catch(e){}
+  if (/^(us|uk|intl)$/.test(urlRegion)) { region = urlRegion; source = "url"; }
+  else if (/^(us|uk|intl)$/.test(saved||"")) { region = saved; source = "saved"; }
+  else { region = guessRegion(); source = "auto"; }
+
+  /* carry campaign params (utm_*, gclid, fbclid) to the Miasha store so its analytics sees the source */
+  function withParams(url){
+    try{
+      var u = new URL(url);
+      qs.forEach(function(v,k){ if (/^(utm_|gclid$|gbraid$|wbraid$|fbclid$)/.test(k)) u.searchParams.set(k,v); });
+      return u.toString();
+    }catch(e){ return url; }
+  }
+
+  var LABELS = { us:"United States", uk:"United Kingdom", intl:"Worldwide" };
+  function $all(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); }
+  function setText(sel, txt){ $all(sel).forEach(function(el){ el.textContent = txt; }); }
+
+  function applyRegion(r){
+    region = r;
+    var amazon = (r === "us" && CONFIG.links.us) || (r === "uk" && CONFIG.links.uk);
+    var platform = amazon ? "amazon" : "miasha";
+    var p = CONFIG.prices[platform === "amazon" ? r : "intl"] || {};
+
+    $all(".js-cta").forEach(function(a){
+      var opt = a.getAttribute("data-option");
+      var href = amazon ? amazon : withParams(opt === "buy" ? CONFIG.links.intlBuy : CONFIG.links.intlRent);
+      a.setAttribute("href", href);
+      a.setAttribute("data-platform", platform);
+      a.setAttribute("rel", "noopener");
+    });
+
+    if (platform === "amazon") {
+      setText(".js-rent-label", "Rent on Prime Video");
+      setText(".js-buy-label", "Buy on Prime Video");
+      setText(".js-fine", "Opens SWING on Prime Video, where you pick Rent or Buy. No Prime membership needed.");
+      setText(".js-trust2", "Checkout with your existing Amazon account");
+      setText(".js-step1", "You'll land on SWING's official Prime Video page.");
+      setText(".js-step2", "Sign in with your Amazon account and choose Rent or Buy. No Prime membership required.");
+      setText("#eyebrowText", "Now streaming on Prime Video");
+      setText(".js-alt", "Outside the US or UK? Tap “Watching from” at the top to watch worldwide.");
+    } else {
+      setText(".js-rent-label", "Rent now");
+      setText(".js-buy-label", "Buy & keep forever");
+      setText(".js-fine", "Secure checkout on Miasha Productions. Watch worldwide on any device.");
+      setText(".js-trust2", "Secure worldwide checkout, card or Google Pay");
+      setText(".js-step1", "You'll go straight to secure checkout on Miasha Productions.");
+      setText(".js-step2", "Create your account, pay, and the film unlocks instantly.");
+      setText("#eyebrowText", "Streaming worldwide now");
+      setText(".js-alt", "");
+    }
+    setText(".js-faq1", platform === "amazon"
+      ? "No. Renting or buying SWING only needs a regular Amazon account. Prime members check out the same way."
+      : "No membership needed. Create a free Miasha Productions account at checkout and the film unlocks instantly.");
+    setText(".js-rent-price", p.rent || "");
+    setText(".js-buy-price", p.buy || "");
+    setText(".js-rent-price-card", p.rent ? p.rent + " rental" : "Best for movie night");
+    setText(".js-buy-price-card", p.buy ? p.buy + " to own" : "Yours to keep");
+    setText("#regionLabel", LABELS[r]);
+    $all("#modal button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-region") === r ? "true" : "false"); });
+  }
+  applyRegion(region);
+  track({ event:"swing_region", region: region, region_source: source });
+
+  /* ---------- CTA clicks: plain links (keeps the Prime Video app hand-off working on mobile).
+     GTM's Google Ads + Meta tags send by beacon, so no navigation delay is needed. ---------- */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest(".js-cta");
+    if (!a) return;
+    track({
+      event: "swing_cta_click",
+      cta_platform: a.getAttribute("data-platform"),
+      cta_option: a.getAttribute("data-option"),
+      cta_location: a.getAttribute("data-location"),
+      cta_url: a.href,
+      region: region
+    });
+  });
+
+  /* ---------- Logo ---------- */
+  if (CONFIG.logoUrl) {
+    var lg = new Image(); lg.alt = "Miasha Productions"; lg.className = "logo";
+    lg.onload = function(){ var b = document.getElementById("brand"); b.textContent = ""; b.appendChild(lg); };
+    lg.src = CONFIG.logoUrl;
+  }
+
+  /* ---------- Cast ---------- */
+  function esc(t){ var d = document.createElement("div"); d.textContent = t || ""; return d.innerHTML; }
+  function initials(n){ return (n||"").split(/\s+/).map(function(w){ return w[0]; }).join("").slice(0,2).toUpperCase(); }
+  document.getElementById("couples").innerHTML = CONFIG.couples.map(function(c){
+    return '<div class="couple" data-img="'+esc(c.img)+'"><div class="tx"><div class="lab">'+esc(c.label)+'</div><div class="nm">'+esc(c.names)+'</div>'+(c.actors?'<div class="ac">'+esc(c.actors)+'</div>':'')+'</div></div>';
+  }).join("");
+  $all(".couple").forEach(function(el){
+    var src = el.getAttribute("data-img"); if (!src) return;
+    var im = new Image(); im.onload = function(){ el.style.backgroundImage = "url('"+src+"')"; }; im.src = src;
+  });
+  document.getElementById("leads").innerHTML = CONFIG.leads.map(function(l){
+    return '<div class="lead"><div class="av">'+initials(l.actor)+'</div><div><div class="n">'+esc(l.actor)+'</div><div class="r">'+(l.role?'as '+esc(l.role):'Starring')+'</div></div></div>';
+  }).join("");
+  var fc = CONFIG.fullCast || [];
+  document.getElementById("fullcast").innerHTML = fc.map(function(c){
+    return '<div class="row"><span>'+esc(c.actor)+'</span><span>'+esc(c.role)+'</span></div>';
+  }).join("");
+  var tgl = document.getElementById("castToggle"), more = document.getElementById("more");
+  if (!fc.length) tgl.style.display = "none";
+  else document.getElementById("castToggleText").textContent = "See full cast (+" + fc.length + ")";
+  tgl.addEventListener("click", function(){
+    var open = !more.classList.contains("open");
+    more.classList.toggle("open", open);
+    tgl.setAttribute("aria-expanded", open ? "true" : "false");
+    document.getElementById("castToggleText").textContent = open ? "Show less" : "See full cast (+" + fc.length + ")";
+    if (open) track({ event:"swing_cast_expand" });
+  });
+
+  /* ---------- FAQ engagement ---------- */
+  $all("#faq details").forEach(function(d){
+    d.addEventListener("toggle", function(){ if (d.open) track({ event:"swing_faq_open", faq_question: d.querySelector("summary").textContent }); });
+  });
+
+  /* ---------- Region picker ---------- */
+  var modal = document.getElementById("modal");
+  document.getElementById("regionBtn").addEventListener("click", function(){ modal.classList.add("open"); });
+  modal.addEventListener("click", function(e){
+    if (e.target === modal) { modal.classList.remove("open"); return; }
+    var b = e.target.closest("button[data-region]"); if (!b) return;
+    var r = b.getAttribute("data-region");
+    try{ localStorage.setItem("swing_region", r); }catch(err){}
+    applyRegion(r);
+    track({ event:"swing_region", region:r, region_source:"manual" });
+    modal.classList.remove("open");
+  });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") modal.classList.remove("open"); });
+
+  /* ---------- Poster + trailer (lightweight facade: YouTube only loads on click) ---------- */
+  var trailer = document.getElementById("trailer");
+  if (CONFIG.posterUrl) document.getElementById("poster").style.backgroundImage = "url('" + CONFIG.posterUrl + "')";
+  if (CONFIG.youtubeId) {
+    var img = new Image();
+    img.onload = function(){ trailer.style.backgroundImage = "url('" + img.src + "')"; };
+    img.src = "https://i.ytimg.com/vi/" + CONFIG.youtubeId + "/maxresdefault.jpg";
+  }
+  var started = false;
+  function startTrailer(){
+    if (started) return; started = true;
+    track({ event:"swing_trailer", trailer_action:"play" });
+    if (!CONFIG.youtubeId) { trailer.querySelector(".label").textContent = "Trailer coming soon: add the YouTube ID in CONFIG"; return; }
+    trailer.innerHTML = '<div id="ytp"></div>';
+    var s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+  }
+  window.onYouTubeIframeAPIReady = function(){
+    var marks = {25:false,50:false,75:false}, timer = null;
+    window.ytPlayer = new YT.Player("ytp", {
+      videoId: CONFIG.youtubeId,
+      playerVars: { autoplay:1, rel:0, modestbranding:1, playsinline:1 },
+      events: {
+        onStateChange: function(ev){
+          var p = ev.target;
+          if (ev.data === YT.PlayerState.PLAYING && !timer) {
+            timer = setInterval(function(){
+              var d = p.getDuration(), t = p.getCurrentTime(); if (!d) return;
+              [25,50,75].forEach(function(m){ if (!marks[m] && t/d*100 >= m){ marks[m] = true; track({ event:"swing_trailer", trailer_action:"progress_"+m }); } });
+            }, 1000);
+          }
+          if (ev.data === YT.PlayerState.ENDED) {
+            clearInterval(timer); timer = null;
+            track({ event:"swing_trailer", trailer_action:"complete" });
+            showEndscreen();
+          }
+        }
+      }
+    });
+  };
+  function showEndscreen(){
+    var es = document.createElement("div"); es.className = "endscreen show";
+    var r = document.querySelector('.panel .js-cta[data-option="rent"]'), b = document.querySelector('.panel .js-cta[data-option="buy"]');
+    es.innerHTML = '<h5>Ready for the full night?</h5><div class="row">'
+      + '<a class="btn btn-primary js-cta" data-option="rent" data-location="endscreen" data-platform="'+r.getAttribute("data-platform")+'" href="'+r.href+'">'+r.querySelector(".js-rent-label").textContent+'</a>'
+      + '<a class="btn btn-secondary js-cta" data-option="buy" data-location="endscreen" data-platform="'+b.getAttribute("data-platform")+'" href="'+b.href+'">'+b.querySelector(".js-buy-label").textContent+'</a>'
+      + '</div><button class="replay" type="button">Replay trailer</button>';
+    trailer.appendChild(es);
+    es.querySelector(".replay").addEventListener("click", function(e){ e.stopPropagation(); es.remove(); try{ ytPlayer.seekTo(0); ytPlayer.playVideo(); }catch(err){} });
+  }
+  trailer.addEventListener("click", startTrailer);
+  trailer.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); startTrailer(); } });
+
+  /* ---------- Sticky mobile bar appears once the hero CTAs scroll out of view ---------- */
+  var sticky = document.getElementById("sticky"), panel = document.querySelector(".panel");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(entries){
+      sticky.classList.toggle("show", !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0);
+    }).observe(panel);
+  }
+})();
+</script>
+</body>
+</html>
