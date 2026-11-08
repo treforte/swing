@@ -118,12 +118,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .leads{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;margin-top:38px;font-family:var(--display);font-weight:300;font-size:clamp(18px,2.4vw,24px);color:#fff}
   .leads span{padding:0 18px;border-left:1px solid var(--line-red)}
   .leads span:first-child{border-left:0}
+  .creditline{margin-top:14px;font-size:13.5px;color:var(--muted);letter-spacing:.02em}
+  .creditline b{color:var(--soft);font-weight:500}
+  .creditline .sep{margin:0 10px;color:var(--line-red)}
+  .sub{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--red);margin:28px auto 0;max-width:720px;text-align:left}
+  .fullcast .row span:first-child{color:var(--ink)}
   .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
   .more.open{grid-template-rows:1fr}
   .more > div{overflow:hidden}
-  .fullcast{display:grid;grid-template-columns:repeat(2,1fr);gap:0 36px;max-width:720px;margin:0 auto;padding-top:22px;text-align:left}
+  .fullcast{display:grid;grid-template-columns:repeat(2,1fr);gap:0 36px;max-width:720px;margin:0 auto;padding-top:8px;text-align:left}
   .fullcast .row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
-  .fullcast .row span:last-child{color:var(--muted)}
+  .fullcast .row span:last-child{color:var(--muted);text-align:right}
   .toggle{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:transparent;color:var(--soft);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 20px;font:600 13.5px var(--display);cursor:pointer}
   .toggle:hover{border-color:var(--red);color:#fff}
   .toggle .chev{transition:transform .3s}
@@ -251,7 +256,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="wrap">
     <div class="it"><div class="k">4 couples</div><div class="v">One exclusive night</div></div>
     <div class="it"><div class="k">1h 28m</div><div class="v">Made for date night</div></div>
-    <div class="it"><div class="k">Secret Society</div><div class="v">From the same creators</div></div>
+    <div class="it"><div class="k">Miasha Coleman</div><div class="v">Creator of Secret Society</div></div>
   </div>
 </div>
 
@@ -270,7 +275,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h2>Four couples. <em>Which one are you?</em></h2>
       <div class="couples" id="couples"></div>
       <div class="leads" id="leads" aria-label="Starring"></div>
-      <div class="more" id="more"><div><div class="fullcast" id="fullcast"></div></div></div>
+      <p class="creditline" id="creditline"></p>
+      <div class="more" id="more"><div>
+        <div class="sub">Also starring</div>
+        <div class="fullcast" id="fullcast"></div>
+        <div class="sub">Creators</div>
+        <div class="fullcast" id="credits"></div>
+      </div></div>
       <button class="toggle" id="castToggle" type="button" aria-expanded="false" aria-controls="more"><span id="castToggleText">See full cast</span><span class="chev">▾</span></button>
     </div>
   </section>
@@ -386,9 +397,20 @@ var CONFIG = {
     { names:"Tori + Kevin",       label:"The First Timers", actors:"", img:"https://static.wixstatic.com/media/c66991_a7add3d542214c31ab1867dfef368668~mv2.jpg" }
   ],
   leads: ["Columbus Short", "Angela Simmons", "Tobias Truvillion"],
-  fullCast: [          // revealed by "See full cast"
-    { actor:"Tre Forte", role:"Kevin" }
-    // { actor:"Name", role:"Character" },
+  fullCast: [          // revealed by "See full cast". role = character name ("" hides it)
+    { actor:"Olivia Hawthorne", role:"" },
+    { actor:"Tre Forte",        role:"Kevin" },
+    { actor:"Diana Mots",       role:"" },
+    { actor:"Jarred Evans",     role:"" },
+    { actor:"Mecca Randall",    role:"" },
+    { actor:"Kathy Morales",    role:"" },
+    { actor:"Mariel Rascon",    role:"" }
+  ],
+  credits: [           // always-visible line uses the first two; all show in the expanded panel
+    { label:"Created by",  names:"Miasha Coleman" },
+    { label:"Directed by", names:"Jamal Hill" },
+    { label:"Produced by", names:"Elissa Nelson, Rich Coleman" },
+    { label:"Studio",      names:"Miasha Productions, Inc." }
   ]
 };
 
@@ -492,11 +514,15 @@ function track(o){ try{ window.dataLayer.push(o); }catch(e){} }
   document.getElementById("leads").innerHTML = CONFIG.leads.map(function(n){ return "<span>"+esc(n)+"</span>"; }).join("");
   var fc = CONFIG.fullCast || [], more = document.getElementById("more"), tgl = document.getElementById("castToggle"), tt = document.getElementById("castToggleText");
   document.getElementById("fullcast").innerHTML = fc.map(function(c){ return '<div class="row"><span>'+esc(c.actor)+'</span><span>'+esc(c.role)+'</span></div>'; }).join("");
-  if (!fc.length) tgl.style.display = "none"; else tt.textContent = "See full cast (+" + fc.length + ")";
+  var cr = CONFIG.credits || [];
+  document.getElementById("credits").innerHTML = cr.map(function(c){ return '<div class="row"><span>'+esc(c.label)+'</span><span>'+esc(c.names)+'</span></div>'; }).join("");
+  document.getElementById("creditline").innerHTML = cr.slice(0,2).map(function(c){ return esc(c.label)+' <b>'+esc(c.names)+'</b>'; }).join('<span class="sep">|</span>');
+  var label = "See full cast & creators";
+  if (!fc.length && !cr.length) tgl.style.display = "none"; else tt.textContent = label;
   tgl.addEventListener("click", function(){
     var open = !more.classList.contains("open");
     more.classList.toggle("open", open); tgl.setAttribute("aria-expanded", open ? "true" : "false");
-    tt.textContent = open ? "Show less" : "See full cast (+" + fc.length + ")";
+    tt.textContent = open ? "Show less" : label;
     if (open) track({ event:"swing_cast_expand" });
   });
 
