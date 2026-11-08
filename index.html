@@ -8,7 +8,7 @@
 <meta property="og:title" content="SWING | Now Streaming on Prime Video">
 <meta property="og:description" content="Four couples. One night. No going back. Rent or buy SWING now.">
 <meta property="og:type" content="video.movie">
-<meta name="theme-color" content="#0d0102">
+<meta name="theme-color" content="#050505">
 
 <!-- ============ GOOGLE TAG MANAGER (head) ============
      Replace GTM-XXXXXXX with the container ID, then uncomment.
@@ -21,14 +21,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#0d0102; --bg2:#160305; --bg3:#1f0507; --ink:#f7f2f2; --muted:#b39c9d; --line:rgba(211,57,62,.18);
-    --red:#d3393e; --red-hot:#e8464b; --red-deep:#5c0a0e;
-    --violet:#d3393e; --magenta:#5c0a0e; --gold:#e8464b;
-    --cta:#d3393e; --cta-ink:#ffffff;
+    --bg:#050505; --bg2:#0f0f10; --bg3:#161618; --ink:#f5f5f5; --muted:#a3a3a3; --line:rgba(255,255,255,.10);
+    --red:#d7141f; --red-hot:#ff2a36; --red-deep:#7a0a10;
+    --violet:#d7141f; --magenta:#7a0a10; --gold:#ff2a36;
+    --cta:#d7141f; --cta-ink:#ffffff;
     --r:14px; --max:1120px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -41,24 +41,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero{position:relative;overflow:hidden;padding:26px 0 56px;isolation:isolate}
   .hero::before{content:"";position:absolute;inset:0;z-index:-2;
     background:
-      repeating-linear-gradient(90deg, rgba(0,0,0,.0) 0 38px, rgba(0,0,0,.28) 38px 70px, rgba(0,0,0,0) 70px 96px),
-      radial-gradient(70% 80% at 75% 25%, rgba(120,12,18,.75), transparent 72%),
-      radial-gradient(50% 60% at 15% 0%, rgba(70,6,10,.6), transparent 70%),
+      radial-gradient(55% 65% at 80% 30%, rgba(215,20,31,.38), transparent 70%),
+      radial-gradient(40% 50% at 95% 85%, rgba(122,10,16,.55), transparent 70%),
       var(--bg);
   }
   .hero .poster{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:70% 20%;opacity:.45;mask-image:linear-gradient(90deg,transparent 0%,#000 55%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%)}
   .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:140px;z-index:-1;background:linear-gradient(transparent,var(--bg))}
   .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:38px}
-  .brand{font-family:Montserrat,system-ui,sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#fff;font-weight:400}
+  .brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
   .region{font-size:12px;color:var(--muted);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
   .region:hover{color:var(--ink)}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
   .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(226,54,74,.7);animation:pulse 2s infinite}
   @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(226,54,74,0)}100%{box-shadow:0 0 0 0 rgba(226,54,74,0)}}
-  h1{font-family:Montserrat,system-ui,sans-serif;font-weight:200;color:var(--red);font-size:clamp(84px,13vw,168px);line-height:.9;letter-spacing:.03em;margin:16px 0 10px;text-shadow:0 0 50px rgba(211,57,62,.35)}
+  h1{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;font-size:clamp(96px,15vw,190px);line-height:.82;letter-spacing:.04em;margin:16px 0 8px;text-shadow:0 0 60px rgba(215,20,31,.35)}
+  h1 .i{color:var(--red)}
   .logo{height:34px;width:auto;display:block}
-  .tagline{font-family:Montserrat,system-ui,sans-serif;font-weight:400;font-size:clamp(13px,1.5vw,16px);letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:16px}
-  .tagline b{color:var(--red-hot);font-weight:600}
+  .tagline{font-family:"Bebas Neue",Impact,sans-serif;font-size:clamp(24px,3vw,34px);letter-spacing:.08em;color:#fff;margin-bottom:12px}
+  .tagline b{color:var(--red-hot);font-weight:400}
   .meta{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:14px;color:var(--muted);margin-bottom:28px}
   .meta span+span::before{content:"•";margin-right:14px;opacity:.5}
   .pill{border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-size:12px}
@@ -66,8 +66,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:42px;align-items:start}
 
   /* Trailer facade */
-  .trailer{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#120203 center/cover;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--line);cursor:pointer}
-  .trailer .shade{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,.05),rgba(0,0,0,.6)),linear-gradient(135deg,rgba(120,12,18,.45),rgba(0,0,0,.2))}
+  .trailer{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000 center/cover;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--line);cursor:pointer}
+  .trailer .shade{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,.05),rgba(0,0,0,.6)),linear-gradient(135deg,rgba(215,20,31,.30),rgba(0,0,0,.2))}
   .trailer .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:transform .2s ease;box-shadow:0 10px 40px rgba(0,0,0,.5)}
   .trailer:hover .play{transform:translate(-50%,-50%) scale(1.07)}
   .trailer .play svg{margin-left:6px}
@@ -75,12 +75,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .trailer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
   /* CTA panel */
-  .panel{background:rgba(22,3,5,.82);border-top:3px solid var(--red)!important;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+  .panel{background:rgba(12,12,13,.78);border-top:3px solid var(--red)!important;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--r);padding:24px}
   .panel h2{font-size:15px;font-weight:600;color:var(--muted);margin-bottom:14px}
   .btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-decoration:none;font-weight:700;font-size:17px;border-radius:12px;padding:17px 20px;transition:transform .15s ease,box-shadow .15s ease,background .15s}
   .btn:active{transform:scale(.98)}
-  .btn-primary{background:var(--cta);color:var(--cta-ink);box-shadow:0 10px 30px rgba(211,57,62,.35)}
-  .btn-primary:hover{background:var(--red-hot);box-shadow:0 14px 44px rgba(232,70,75,.5)}
+  .btn-primary{background:var(--cta);color:var(--cta-ink);box-shadow:0 10px 30px rgba(215,20,31,.35)}
+  .btn-primary:hover{background:var(--red-hot);box-shadow:0 14px 44px rgba(255,42,54,.5)}
   .btn-secondary{background:transparent;color:var(--ink);border:1.5px solid rgba(255,255,255,.35);margin-top:12px}
   .btn-secondary:hover{background:rgba(255,255,255,.06)}
   .btn .price{font-weight:600;font-size:14px;opacity:.75}
@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ---------- SECTIONS ---------- */
   section{padding:64px 0}
   .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
-  h3{font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:clamp(30px,4.2vw,50px);line-height:1.08;letter-spacing:.01em;margin-bottom:18px}
+  h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;font-size:clamp(40px,5.4vw,64px);line-height:.95;letter-spacing:.03em;margin-bottom:18px}
   h3 em{font-style:normal;color:var(--red-hot)}
   .lede{font-size:18px;color:#ddd6ee;max-width:640px}
   .story{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
@@ -105,20 +105,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
   .step{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--bg2)}
-  .step .num{font-family:Montserrat,system-ui,sans-serif;font-weight:200;font-size:48px;color:var(--red);line-height:1}
+  .step .num{font-family:"Bebas Neue",Impact,sans-serif;font-size:46px;color:var(--red);line-height:1}
   .step h4{font-size:17px;margin:10px 0 6px}
   .step p{font-size:14.5px;color:var(--muted)}
 
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
   .card{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--bg2);display:flex;flex-direction:column}
-  .card.best{border-color:rgba(211,57,62,.7);background:linear-gradient(180deg,rgba(211,57,62,.14),var(--bg2) 45%)}
+  .card.best{border-color:rgba(215,20,31,.7);background:linear-gradient(180deg,rgba(215,20,31,.12),var(--bg2) 45%)}
   .badge{position:absolute;top:-11px;left:22px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
   .card h4{font-size:22px;margin-bottom:4px}
   .card .p{font-size:15px;color:var(--muted);margin-bottom:16px}
   .card ul{list-style:none;display:grid;gap:9px;margin-bottom:22px;font-size:15px;flex:1}
   .card li::before{content:"✓";color:var(--gold);font-weight:700;margin-right:10px}
 
-  .makers{text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(60% 120% at 50% 0%,rgba(120,12,18,.45),transparent 70%)}
+  .makers{text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(60% 120% at 50% 0%,rgba(215,20,31,.20),transparent 70%)}
   .makers .lede{margin:0 auto}
 
   .final{text-align:center}
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer p+p{margin-top:6px}
 
   /* Sticky mobile CTA */
-  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(13,1,2,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none;gap:10px;transform:translateY(110%);transition:transform .25s ease}
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(7,6,13,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none;gap:10px;transform:translateY(110%);transition:transform .25s ease}
   .sticky.show{transform:none}
   .sticky .btn{padding:14px 12px;font-size:15px;justify-content:center;margin:0}
 
@@ -140,28 +140,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .modal .box{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:24px;width:100%;max-width:380px}
   .modal h4{font-size:18px;margin-bottom:14px}
   .modal button{display:block;width:100%;text-align:left;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:13px 14px;margin-top:8px;font:inherit;cursor:pointer}
-  .modal button:hover,.modal button[aria-pressed="true"]{border-color:var(--red);background:rgba(211,57,62,.12)}
+  .modal button:hover,.modal button[aria-pressed="true"]{border-color:var(--red);background:rgba(215,20,31,.10)}
   .modal small{display:block;color:var(--muted);font-size:12.5px}
 
 
   /* Opening weekend strip */
-  .strip{background:var(--red-deep);border-bottom:1px solid var(--red);color:#fff;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 14px}
+  .strip{background:var(--red);color:#fff;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 14px}
   .strip a{color:#fff;text-underline-offset:3px}
 
   /* Couples */
   .couples{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
-  .couple{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(160deg,#3a070b,#120203 70%) center/cover;border:1px solid var(--line)}
+  .couple{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(160deg,#2a0508,#0b0b0c 70%) center/cover;border:1px solid var(--line)}
   .couple::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.92))}
   .couple .tx{position:absolute;left:16px;right:16px;bottom:14px;z-index:1}
   .couple .lab{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red-hot)}
-  .couple .nm{font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:24px;line-height:1.1;margin-top:4px}
+  .couple .nm{font-family:"Bebas Neue",Impact,sans-serif;font-size:30px;letter-spacing:.04em;line-height:1;margin-top:4px}
   .couple .ac{font-size:12.5px;color:#d4d4d4;margin-top:4px}
   .quiz{margin-top:14px;font-size:14px;color:var(--muted)}
 
   /* Cast + expand */
   .leads{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
   .lead{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
-  .lead .av{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:600;border:1px solid var(--red);color:var(--red-hot);background:var(--bg3)}
+  .lead .av{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:700;background:linear-gradient(135deg,var(--red),var(--red-deep))}
   .lead .n{font-weight:600}.lead .r{font-size:13px;color:var(--muted)}
   .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
   .more.open{grid-template-rows:1fr}
@@ -185,7 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Trailer end screen */
   .endscreen{position:absolute;inset:0;z-index:3;background:rgba(5,5,5,.88);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center}
   .endscreen.show{display:flex}
-  .endscreen h5{font-family:Montserrat,system-ui,sans-serif;font-weight:300;font-size:clamp(24px,3.4vw,34px)}
+  .endscreen h5{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;font-size:clamp(28px,4vw,40px);letter-spacing:.04em}
   .endscreen .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
   .endscreen .btn{width:auto;min-width:170px;justify-content:center;margin:0}
   .endscreen .replay{background:none;border:0;color:var(--muted);font:500 13px Inter,sans-serif;cursor:pointer;text-decoration:underline}
@@ -209,7 +209,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 -->
 
-<div class="strip" id="strip">Opening weekend · Streaming now · <a href="#watch">Watch tonight</a></div>
+<div class="strip" id="strip">🔥 Opening weekend: SWING is streaming now · <a href="#watch">Watch tonight</a></div>
 <header class="hero">
   <div class="poster" id="poster"></div>
   <div class="wrap">
@@ -221,8 +221,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="hero-grid">
       <div>
         <div class="eyebrow"><span class="dot"></span><span id="eyebrowText">Now streaming on Prime Video</span></div>
-        <h1>SWING</h1>
-        <p class="tagline">One night. No rules. <b>Endless consequences.</b></p>
+        <h1>SW<span class="i">I</span>NG</h1>
+        <p class="tagline">Four couples. One night. <b>Too many secrets.</b></p>
         <div class="meta">
           <span>Suspense</span><span>Drama</span><span>2026</span><span>1h 28m</span><span><b class="pill">NR</b> Mature audiences</span>
         </div>
@@ -246,9 +246,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </a>
         <p class="fine js-fine">Opens SWING on Prime Video, where you pick Rent or Buy. No subscription needed.</p>
         <div class="trust">
-          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#e8464b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span>Watch on your TV, phone, tablet or laptop</span></div>
-          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#e8464b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span class="js-trust2">Checkout with your existing Amazon account</span></div>
-          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#e8464b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span>From the creators of the Secret Society films</span></div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#ff2a36" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span>Watch on your TV, phone, tablet or laptop</span></div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#ff2a36" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span class="js-trust2">Checkout with your existing Amazon account</span></div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7" stroke="#ff2a36" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span>From the creators of the Secret Society films</span></div>
         </div>
       </aside>
     </div>
