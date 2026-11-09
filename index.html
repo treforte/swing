@@ -10,14 +10,13 @@
 <meta property="og:type" content="video.movie">
 <meta name="theme-color" content="#0b0102">
 
-<!-- ============ GOOGLE TAG MANAGER (head) ============
-     Replace GTM-XXXXXXX with the container ID, then uncomment.
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-==================================================== -->
+})(window,document,'script','dataLayer','GTM-WJLB6KVH');</script>
+<!-- End Google Tag Manager -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,6 +85,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .player .play svg{margin-left:5px}
   .player .cap{position:absolute;left:20px;right:20px;bottom:16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
   .player .cap span:last-child{color:var(--soft);font-weight:500;letter-spacing:.08em}
+  .player{background-size:cover;background-position:center}
+  .player.has-cover{background-size:108%;transition:background-size .6s ease}
+  .player.has-cover:hover{background-size:114%}
+  .player.has-cover .scrim{background:linear-gradient(90deg,rgba(11,1,2,.85) 0%,rgba(11,1,2,.25) 55%,rgba(11,1,2,.1)),linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.75))}
+  .player .lockup{display:none;position:absolute;left:28px;top:50%;transform:translateY(-50%);flex-direction:column;gap:6px;text-align:left}
+  .player.has-cover .lockup{display:flex}
+  .player .lt{font-family:var(--display);font-weight:200;color:var(--red);font-size:clamp(34px,6vw,64px);letter-spacing:.14em;line-height:1;text-shadow:0 0 30px rgba(0,0,0,.6)}
+  .player .ls{font-family:var(--display);font-weight:600;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#fff}
+  .player.has-cover .play{left:auto;right:12%;transform:translateY(-50%)}
+  .player.has-cover:hover .play{transform:translateY(-50%) scale(1.06)}
   .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
   .ctas{display:flex;gap:12px;justify-content:center;margin:28px auto 0;max-width:620px}
@@ -115,9 +124,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .couple .nm{font-family:var(--display);font-weight:300;font-size:22px;line-height:1.15;margin-top:5px}
   .couple .ac{font-size:12.5px;color:var(--soft);margin-top:4px}
 
-  .leads{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;margin-top:38px;font-family:var(--display);font-weight:300;font-size:clamp(18px,2.4vw,24px);color:#fff}
-  .leads span{padding:0 18px;border-left:1px solid var(--line-red)}
-  .leads span:first-child{border-left:0}
+  .leads{display:grid;grid-template-columns:repeat(3,minmax(0,200px));justify-content:center;gap:28px;margin-top:44px}
+  .star{margin:0;text-align:center}
+  .star .ph{width:100%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 35%,#3a070b,#140304 75%) center/cover;border:1px solid var(--line-red);box-shadow:0 0 0 6px rgba(211,57,62,.06),0 20px 40px -18px rgba(0,0,0,.8);display:grid;place-items:center;transition:transform .25s ease}
+  .star:hover .ph{transform:scale(1.03)}
+  .star .ph span{font:200 clamp(28px,4vw,44px) var(--display);letter-spacing:.08em;color:var(--red)}
+  .star .ph.on span{display:none}
+  .star figcaption{margin-top:14px;font:300 clamp(15px,1.8vw,19px) var(--display);color:#fff}
   .creditline{margin-top:14px;font-size:13.5px;color:var(--muted);letter-spacing:.02em}
   .creditline b{color:var(--soft);font-weight:500}
   .creditline .sep{margin:0 10px;color:var(--line-red)}
@@ -200,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .couples{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:26px -20px 0;padding:0 20px 6px;gap:12px;scrollbar-width:none}
     .couples::-webkit-scrollbar{display:none}
     .couple{flex:0 0 72%;scroll-snap-align:start}
-    .leads span{padding:0 12px}
+    .leads{grid-template-columns:repeat(3,1fr);gap:14px}
     .choose,.steps,.fullcast{grid-template-columns:1fr}
     .sticky{display:flex}
   }
@@ -208,9 +221,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 </head>
 <body>
-<!-- GTM (noscript): replace GTM-XXXXXXX, then uncomment
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
--->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJLB6KVH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="strip"><span class="dot"></span>Opening weekend · Now streaming</div>
 
@@ -231,7 +242,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="ghost" aria-hidden="true">SWING</div>
       <div class="scrim"></div>
       <div class="play"><svg width="28" height="32" viewBox="0 0 28 32" aria-hidden="true"><path d="M27 16 1 31V1z" fill="#fff"/></svg></div>
-      <div class="cap"><span>▶ Official trailer</span><span></span></div>
+      <div class="lockup" aria-hidden="true"><span class="lt">SWING</span><span class="ls">Official Trailer</span></div>
+      <div class="cap"><span>▶ Watch the trailer</span><span></span></div>
     </div>
 
     <div class="ctas" id="watch">
@@ -374,8 +386,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    CONFIG: edit these values only
    ===================================================================== */
 var CONFIG = {
-  youtubeId: "",      // trailer's YouTube video ID (host it on Miasha's channel). Its thumbnail becomes the player cover.
-  coverUrl:  "",      // optional 16:9 cover image if there's no YouTube ID. "" = clean SWING title card
+  youtubeId: "CG0Gsc52B4c", // trailer's YouTube video ID (host it on Miasha's channel). Its thumbnail becomes the player cover.
+  coverUrl:  "",      // optional custom 16:9 trailer thumbnail (overrides the YouTube frame)
   trailerLength: "",  // e.g. "2 min"
   links: {
     us:   "https://www.amazon.com/gp/video/detail/B0HG64BFPJ",
@@ -396,7 +408,12 @@ var CONFIG = {
     { names:"Juju + Ferrari",     label:"The Wild Card",    actors:"", img:"https://static.wixstatic.com/media/c66991_455c33eabce9439a8f94e819d4b04997~mv2.jpg" },
     { names:"Tori + Kevin",       label:"The First Timers", actors:"", img:"https://static.wixstatic.com/media/c66991_a7add3d542214c31ab1867dfef368668~mv2.jpg" }
   ],
-  leads: ["Columbus Short", "Angela Simmons", "Tobias Truvillion"],
+  /* Top-billed cast. photo = official headshot or still from Miasha (square, 600px+). "" shows initials. */
+  leads: [
+    { name:"Columbus Short",    photo:"" },
+    { name:"Angela Simmons",    photo:"" },
+    { name:"Tobias Truvillion", photo:"" }
+  ],
   fullCast: [          // revealed by "See full cast". role = character name ("" hides it)
     { actor:"Olivia Hawthorne", role:"" },
     { actor:"Tre Forte",        role:"Kevin" },
@@ -511,7 +528,14 @@ function track(o){ try{ window.dataLayer.push(o); }catch(e){} }
     var src = el.getAttribute("data-img"); if (!src) return;
     var im = new Image(); im.onload = function(){ el.style.backgroundImage = "url('"+src+"')"; }; im.src = src;
   });
-  document.getElementById("leads").innerHTML = CONFIG.leads.map(function(n){ return "<span>"+esc(n)+"</span>"; }).join("");
+  document.getElementById("leads").innerHTML = CONFIG.leads.map(function(l){
+    var ini = l.name.split(/\s+/).map(function(w){ return w[0]; }).join("").slice(0,2);
+    return '<figure class="star"><div class="ph" data-img="'+esc(l.photo)+'"><span>'+esc(ini)+'</span></div><figcaption>'+esc(l.name)+'</figcaption></figure>';
+  }).join("");
+  $all(".star .ph").forEach(function(el){
+    var src = el.getAttribute("data-img"); if (!src) return;
+    var im = new Image(); im.onload = function(){ el.style.backgroundImage = "url('"+src+"')"; el.classList.add("on"); }; im.src = src;
+  });
   var fc = CONFIG.fullCast || [], more = document.getElementById("more"), tgl = document.getElementById("castToggle"), tt = document.getElementById("castToggleText");
   document.getElementById("fullcast").innerHTML = fc.map(function(c){ return '<div class="row"><span>'+esc(c.actor)+'</span><span>'+esc(c.role)+'</span></div>'; }).join("");
   var cr = CONFIG.credits || [];
@@ -532,15 +556,20 @@ function track(o){ try{ window.dataLayer.push(o); }catch(e){} }
 
   var player = document.getElementById("player");
   player.querySelector(".cap span:last-child").textContent = CONFIG.trailerLength || "";
-  function setCover(src){ var im = new Image(); im.onload = function(){ player.style.backgroundImage = "url('"+src+"')"; var g = player.querySelector(".ghost"); if (g) g.style.display = "none"; }; im.src = src; }
-  if (CONFIG.youtubeId) setCover("https://i.ytimg.com/vi/" + CONFIG.youtubeId + "/maxresdefault.jpg");
-  else if (CONFIG.coverUrl) setCover(CONFIG.coverUrl);
+  function setCover(src){ var im = new Image(); im.onload = function(){ player.style.backgroundImage = "url('"+src+"')"; player.classList.add("has-cover"); var g = player.querySelector(".ghost"); if (g) g.style.display = "none"; }; im.src = src; }
+  if (CONFIG.coverUrl) setCover(CONFIG.coverUrl);
+  else if (CONFIG.youtubeId) {
+    var probe = new Image();
+    probe.onload = function(){ setCover(probe.naturalWidth > 200 ? probe.src : "https://i.ytimg.com/vi/" + CONFIG.youtubeId + "/hqdefault.jpg"); };
+    probe.src = "https://i.ytimg.com/vi/" + CONFIG.youtubeId + "/maxresdefault.jpg";
+  }
 
   var started = false;
   function startTrailer(){
     if (started) return; started = true;
     track({ event:"swing_trailer", trailer_action:"play" });
     if (!CONFIG.youtubeId) { player.querySelector(".cap span").textContent = "Trailer coming soon"; return; }
+    player.classList.remove("has-cover"); player.style.backgroundImage = "none";
     player.innerHTML = '<div id="ytp"></div>';
     var s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
   }
